@@ -1,28 +1,10 @@
 // Υλοποίηση μιας γενικής συνάρτησης max
 
 #include <stdio.h>
-
-// Πιο κατανοητό να γράφουμε "Pointer" παρά "void*"
-typedef void* Pointer;
-
-// Μια μεταβλητή τύπου CompareFunc είναι δείκτης σε συνάρτηση που
-// συγκρίνει 2 στοιχεία a και b και επιστρέφει έναν ακέραιο με τιμή:
-// < 0  αν a <  b
-//   0  αν a == b
-// > 0  αν a >  b
-typedef int (*CompareFunc)(Pointer a, Pointer b);
+#include <string.h>
+#include <stats.h>
 
 
-// Επιστρέφει το μεγαλύτερο από τα a, b, όπου η σύγκριση γίνεται
-// με βάση τη συνάρτηση compare.
-
-Pointer generic_max(Pointer a, Pointer b, CompareFunc comp) {
-    // Καλούμε την comp για να μας συγκρίνει τους αριθμούς, επιστρέφουμε a ή b ανάλογα
-    if(comp(a, b) > 0)
-        return a;
-    else
-        return b;
-}
 
 // Συγκρίνει 2 ακεραίους a, b
 
@@ -41,10 +23,14 @@ int main() {
 
 
 	// Κάντε uncomment τα παρακάτω και συμπληρώστε κατάλληλα
-
-    // char* s1 = "zzz";
-    // char* s2 = "aaa";
-	// char* max_s = ...;
-
-    // printf("max of %s , %s is %s\n", s1, s2, max_s);
+     char* s1 = "zzz";
+     char* s2 = "aaa";
+int max_s=strcmp(s1, s2);
+     if(max_s>0){
+        printf("max of %s , %s is %s\n", s1, s2, s2);
+     }
+     else 
+     {
+        printf("max of %s , %s is %s\n", s1, s2 ,s1);
+     }
 }

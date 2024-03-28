@@ -21,3 +21,11 @@ int stats_find_max(int array[], int size) {
 	
 	return max;
 }
+
+Pointer generic_max(Pointer a, Pointer b, CompareFunc comp) {
+    
+    if(comp(a, b) > 0)
+        return a;
+    else
+        return b;
+}
